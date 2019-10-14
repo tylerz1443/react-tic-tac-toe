@@ -11,14 +11,6 @@ function Square(props) {
 }
 
 class Board extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-      xIsNext: true,
-    };
-  }
-
   renderSquare(i) {
     return <Square
         value={this.props.squares[i]}
@@ -69,7 +61,6 @@ class Game extends React.Component {
       return;
     }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
-    squares[i] = 'X';
     this.setState({
       history: history.concat([{
         squares: squares,
